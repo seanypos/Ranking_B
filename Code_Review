@@ -1,6 +1,7 @@
 code review 11/16/17
 
-Alvin: Alvin has been testing the unittest framework in python, and using Flask.
+Alvin: Alvin has been testing the unittest framework in python, and using Flask to create an api to 
+  communicate with indexing. 
 Reilly: Reilly is creating an API to converse with the querying component.
 He created test inputs that we may receive from querying. Use 4 spaces instead of tabs
 Sean: Built JSON testing files for link analysis (sending and recieving), in the JSON's he is missing quotations in someareas
