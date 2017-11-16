@@ -1,0 +1,37 @@
+[
+    {
+        url: "example1.com",
+        title: "Title1",
+        author: "Author1"
+    },
+    {
+        url: "example2.com",
+        title: "Title2",
+        author: "Author2"
+    },
+    {
+        url: "example3.com",
+        title: "Title3",
+        author: "Author3"
+    },
+    {
+        url: "example4.com",
+        title: "Title4",
+        author: "Author4"
+    },
+    {
+        url: "example5.com",
+        title: "Title5",
+        author: "Author5"
+    },
+    {
+        url: "example6.com",
+        title: "Title6",
+        author: "Author6"
+    },
+    {
+        url: "example7.com",
+        title: "Title7",
+        author: "Author7"
+    }
+]
