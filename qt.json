@@ -1,0 +1,104 @@
+
+//query json practice test get results
+//**do we remove necessary popular words ('The','a','it')
+
+
+
+//all off
+{
+	"debug": "off",
+	"oneQuery": "false",
+	"twoQuery": "false",
+	"threeQuery": "false"
+	// "query1": [""],
+	// "query2": [""],
+	// "query3": [""]
+}
+
+//debugging on
+{
+	"debug": "on",
+	"oneQuery": "false",
+	"twoQuery": "false",
+	"threeQuery": "false"
+	// "query1": [""],
+	// "query2": [""],
+	// "query3": [""]
+}
+
+//single query on, for single query1
+{
+	"debug": "on",
+	"oneQuery": "true",
+	"twoQuery": "false",
+	"threeQuery": "false",
+	"query1": ["Food"]
+	// "query2": [""],
+	// "query3": [""]
+}
+
+//single query on, for mulit query1
+{
+	"debug": "on",
+	"oneQuery": "true",
+	"twoQuery": "false",
+	"threeQuery": "false",
+	"query1": ["Healthy","Food"]
+	// "query2": [""],
+	// "query3": [""]
+}
+
+//single,double query on, for single query2
+{
+	"debug": "on",
+	"oneQuery": "true",
+	"twoQuery": "true",
+	"threeQuery": "false",
+	"query1": ["Healthy","Food"],
+	"query2": ["Healhty Food"]
+	// "query3": [""]
+}
+
+//single,double query on, for multi query2
+{
+	"debug": "on",
+	"oneQuery": "true",
+	"twoQuery": "true",
+	"threeQuery": "false",
+	"query1": ["Healthy","Food","To","Eat","For","Breakfast"],
+	"query2": ["Healhty Food","Food To","To Eat","Eat For","For Breakfast"]
+	// "query3": [""]
+}
+
+//single,double,triple query on, for single query3
+{
+	"debug": "on",
+	"oneQuery": "true",
+	"twoQuery": "true",
+	"threeQuery": "true",
+	"query1": ["Good","Healthy","Food"],
+	"query2": ["Good Healthy", "Healthy Food"],
+	"query3": ["Good Healthy Food"]
+}
+
+//single,double,triple query on, for multi query3
+{
+	"debug": "on",
+	"oneQuery": "true",
+	"twoQuery": "true",
+	"threeQuery": "true",
+	"query1": ["Good","Healthy","Food","To","Eat"],
+	"query2": ["Good Healthy", "Healthy Food","Food To","To Eat"],
+	"query3": ["Good Healthy Food", "Healthy Food To", "Food To Eat"]
+}
+
+//single,double,triple query on, for multi query3 w/ Debug mode off
+{
+	"debug": "off",
+	"oneQuery": "true",
+	"twoQuery": "true",
+	"threeQuery": "true",
+	"query1": ["Good","Healthy","Food","To","Eat"],
+	"query2": ["Good Healthy", "Healthy Food","Food To","To Eat"],
+	"query3": ["Good Healthy Food", "Healthy Food To", "Food To Eat"]
+}
