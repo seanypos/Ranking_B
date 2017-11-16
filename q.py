@@ -6,8 +6,22 @@ Querying:
 
 #practice flask work things in here
 
-from flask import flask
+from flask import Flask,jsonify
+
+app = Flask (__name__)
+# import qt
+
+@app.route('/')
+def home():
+	return "Hello World"
+
+@app.route('/pq', methods =["GET"])
+def pQuery():
+	d = {"name":"Reilly"}
+	return jsonify(d)
 
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
+	app.Debug = True
+	app.run(host='localhost',port=5000)
