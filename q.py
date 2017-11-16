@@ -5,9 +5,10 @@ Querying:
 """
 
 #practice flask work things in here
-
+import json
 from flask import Flask,jsonify
 
+data = json.load(open('qt.json'))
 app = Flask (__name__)
 # import qt
 
@@ -17,8 +18,7 @@ def home():
 
 @app.route('/pq', methods =["GET"])
 def pQuery():
-    d = {"name":"Reilly"}
-    return jsonify(d)
+    return data
 
 
 
