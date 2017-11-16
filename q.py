@@ -13,15 +13,15 @@ app = Flask (__name__)
 
 @app.route('/')
 def home():
-	return "Hello World"
+    return "Hello World"
 
 @app.route('/pq', methods =["GET"])
 def pQuery():
-	d = {"name":"Reilly"}
-	return jsonify(d)
+    d = {"name":"Reilly"}
+    return jsonify(d)
 
 
 
 if __name__ == '__main__':
-	app.Debug = True
-	app.run(host='localhost',port=5000)
+    app.Debug = True
+    app.run(host='localhost',port=5000)
