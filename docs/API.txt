@@ -1,0 +1,9 @@
+Querying:
+1. Receive queries and send sorted urls back
+2. Receive clicks for urls
+
+Indexing:
+1. Send query and receive relevant metadata and urls
+
+Link Analysis:
+1. Send url and receive PageRank score
