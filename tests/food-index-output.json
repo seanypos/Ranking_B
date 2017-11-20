@@ -1,4 +1,4 @@
-[
+{"urls" : [
     {
 	"url": "www.healthyfood.com",
 	"positions": {
@@ -25,4 +25,4 @@
 	    "food" : [4]
 	}
     }
-]
+]}

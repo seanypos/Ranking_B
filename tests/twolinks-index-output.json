@@ -1,4 +1,4 @@
-[
+{"urls": [
     {
 	"url": "www.fastfood.com",
 	"positions": {
@@ -17,4 +17,4 @@
 	    "food" : [4]
 	}
     }
-]
+]}
