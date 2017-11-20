@@ -1,0 +1,10 @@
+[
+    {
+	"url": "www.healthyfood.com",
+	"positions": {
+	    "eat": [1],
+	    "healthy": [2],
+	    "food" : [3]
+	}
+    }
+]
