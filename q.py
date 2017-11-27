@@ -16,11 +16,15 @@ app = Flask (__name__)
 def home():
     return "Hello World"
 
+#prints json document
 @app.route('/pq', methods =["GET"])
 def pQuery():
-    return data
+    return jsonify(data)
 
-
+#prints all jsons query1's
+@app.route('/q1', methods=["GET"])
+def q1():
+    return jsonify(data[query1])
 
 if __name__ == '__main__':
     app.Debug = True
