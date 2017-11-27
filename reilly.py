@@ -69,7 +69,20 @@ def add_weight(indexing, link_analysis, urls, weights):
             add = count * token_size * .2
             weights[doc["documentID"]] += add 
     return weights
-
+'''
+Function creates a position dictionary that will be used for query json
+'''
+def get_position(url, indexing):
+    position_dict = {}
+    for item in indexing["tokens"]:
+        n_gram = item["token"] 
+        for doc in item["documentOccurences"]:
+            if doc["documentID"] == url:
+                locations = []
+                for loc in doc["locations"]:
+                    locations.append(loc)
+                position_dict[n_gram] = locations
+    return position_dict
 '''
 Create json to hand off to querying
 '''
@@ -81,6 +94,8 @@ def create_query_json(sorted_keys, indexing):
         inside_dict = {}
         inside_dict["url"] = url
         inside_dict["rank"] = rank
+        position = get_position(url,indexing)
+        inside_dict["position"] = position
         rank+=1
         url_info.append(inside_dict)
     
