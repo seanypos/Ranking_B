@@ -82,10 +82,14 @@ def create_query_json(sorted_keys, indexing):
     for item in sorted_keys:
 '''       
 
-        
-        
-    
-    
+'''
+Function creates Json that will be handed off to Link Analysis
+'''
+def create_link_json(urls):
+    link_json = {}
+    link_json["webpages"] = urls
+    json_string = json.dumps(link_json)
+    return json_string
     
 if __name__ == "__main__":
     #test_connection(app)
@@ -97,7 +101,7 @@ if __name__ == "__main__":
     weights = add_weight(indexing, link_analysis, urls, weights)
     checkweight(urls,weights)
     sorted_keys = sorted(weights, key=weights.get, reverse = True)
-    
+    print(create_link_json(urls))
     
     
     
