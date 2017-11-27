@@ -58,9 +58,6 @@ def add_weight(indexing, link_analysis, urls, weights):
     for item in link_analysis["test"]:
         add = item["pageRankValue"] * .2
         weights[item["webpage"]] = add
-        
-    
-        
     ## Add indexing weight multiplier
     for item in indexing["tokens"]:
         token_size = item["ngramSize"]
@@ -115,9 +112,7 @@ def create_link_json(urls):
     return json_string
     
 if __name__ == "__main__":
-    #test_connection(app)
-    #app.run(debug=True)
-    #data = getPageRank()
+    
     link_analysis = getPageRank()
     indexing = getIndexing()
     weights, urls = create_dict(indexing)
@@ -128,8 +123,3 @@ if __name__ == "__main__":
     print(create_query_json(sorted_keys, indexing))
     
     
-    
-    
-    
-    #pprint(data)
-    #pprint(indexing)
