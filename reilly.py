@@ -57,13 +57,36 @@ def add_weight(indexing, link_analysis, urls, weights):
     print(len(link_analysis["test"]))
     for item in link_analysis["test"]:
         add = item["pageRankValue"] * .2
-        print(add)
         weights[item["webpage"]] = add
         
+    
+        
     ## Add indexing weight multiplier
+    for item in indexing["tokens"]:
+        token_size = item["ngramSize"]
+        for doc in item["documentOccurences"]:
+            count = len(doc["locations"])
+            add = count * token_size * .2
+            weights[doc["documentID"]] += add 
+    return weights
+
+'''
+Create json to hand off to querying
+'''
+'''
+def create_query_json(sorted_keys, indexing):
+    query = {"ranking":[
+            {
+                    }
+            ]}
+    for item in sorted_keys:
+'''       
+
+        
+        
     
     
-    checkweight(urls,weights)
+    
 if __name__ == "__main__":
     #test_connection(app)
     #app.run(debug=True)
@@ -72,6 +95,8 @@ if __name__ == "__main__":
     indexing = getIndexing()
     weights, urls = create_dict(indexing)
     weights = add_weight(indexing, link_analysis, urls, weights)
+    checkweight(urls,weights)
+    sorted_keys = sorted(weights, key=weights.get, reverse = True)
     
     
     
