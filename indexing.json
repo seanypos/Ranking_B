@@ -1,37 +1,364 @@
-[
+{
+  "returnCode": 0,
+  "error": "none",
+  "documents": [
     {
-        url: "example1.com",
-        title: "Title1",
-        author: "Author1"
+      "documentID": "nutritionfacts.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
     },
     {
-        url: "example2.com",
-        title: "Title2",
-        author: "Author2"
+      "documentID": "webmd/nutritionfacts.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2014-06-11",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
     },
     {
-        url: "example3.com",
-        title: "Title3",
-        author: "Author3"
+      "documentID": "eatinghealthy.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
     },
     {
-        url: "example4.com",
-        title: "Title4",
-        author: "Author4"
+      "documentID": "weightwatchers.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
     },
     {
-        url: "example5.com",
-        title: "Title5",
-        author: "Author5"
+      "documentID": "cleaneating.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
     },
     {
-        url: "example6.com",
-        title: "Title6",
-        author: "Author6"
+      "documentID": "lifestyle.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
     },
     {
-        url: "example7.com",
-        title: "Title7",
-        author: "Author7"
+      "documentID": "healthy.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
+    },
+    {
+      "documentID": "wickedhealthy.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
+    },
+    {
+      "documentID": "eatgood.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
+    },
+    {
+      "documentID": "befit.com",
+      "wordCount": 100,
+      "pageLastIndexed": "2015-08-22",
+      "importantTokenRanges": [
+        {
+          "fieldName": "eating healthy",
+          "rangeStart": 0,
+          "rangeEnd": 1
+        },
+        {
+          "fieldName": "eating",
+          "rangeStart": 0,
+          "rangeEnd": 0
+        },
+        {
+          "fieldName": "healthy",
+          "rangeStart": 1,
+          "rangeEnd": 1
+        }
+      ]
     }
-]
+  ],
+  "tokens": [
+    {
+      "token": "eating healthy",
+      "ngramSize": 2,
+      "documentOccurences": [
+        {
+          "documentID":"nutritionfacts.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"webmd/nutritionfacts.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"eatinghealthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"weightwatchers.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"cleaneating.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"lifestyle.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"healthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"wickedhealthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"eatgood.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"befit.com",
+          "locations": [2,17,18]
+        }
+    },
+    {
+    "token": "eating",
+      "ngramSize": 1,
+      "documentOccurences": [
+        {
+          "documentID":"nutritionfacts.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"webmd/nutritionfacts.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"eatinghealthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"weightwatchers.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"cleaneating.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"lifestyle.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"healthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"wickedhealthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"eatgood.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"befit.com",
+          "locations": [2,17,18]
+        }
+    },
+    {
+    "token": "healthy",
+      "ngramSize": 1,
+      "documentOccurences": [
+        {
+          "documentID":"nutritionfacts.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"webmd/nutritionfacts.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"eatinghealthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"weightwatchers.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"cleaneating.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"lifestyle.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"healthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"wickedhealthy.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"eatgood.com",
+          "locations": [2,17,18]
+        },
+        {
+          "documentID":"befit.com",
+          "locations": [2,17,18]
+        }
+    }
+  ]
+  
+}
