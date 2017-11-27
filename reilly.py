@@ -73,14 +73,22 @@ def add_weight(indexing, link_analysis, urls, weights):
 '''
 Create json to hand off to querying
 '''
-'''
 def create_query_json(sorted_keys, indexing):
-    query = {"ranking":[
-            {
-                    }
-            ]}
-    for item in sorted_keys:
-'''       
+    query_dict = {}
+    rank = 1
+    url_info = []
+    for url in sorted_keys:
+        inside_dict = {}
+        inside_dict["url"] = url
+        inside_dict["rank"] = rank
+        rank+=1
+        url_info.append(inside_dict)
+    
+    query_dict["ranking"] = url_info
+    json_string = json.dumps(query_dict)
+    return json_string
+    
+       
 
 '''
 Function creates Json that will be handed off to Link Analysis
@@ -101,7 +109,8 @@ if __name__ == "__main__":
     weights = add_weight(indexing, link_analysis, urls, weights)
     checkweight(urls,weights)
     sorted_keys = sorted(weights, key=weights.get, reverse = True)
-    print(create_link_json(urls))
+    #print(create_link_json(urls))
+    print(create_query_json(sorted_keys, indexing))
     
     
     
