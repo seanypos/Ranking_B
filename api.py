@@ -1,33 +1,21 @@
-from flask import Flask, request, jsonify
-
+from flask import Flask, request
+import json
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return "Hello World!"
-
-@app.route('/indexing/<uuid>', methods=["POST"])
-def indexing(uuid):
-    content = request.get_json(silent=True)
-    print("indexing gives us: ", content)
-    # TODO: parse json and add weights
-    return uuid
-
-@app.route('/querying/<uuid>', methods=["POST"])
+@app.route('/query/<uuid>', methods=["POST"])
 def querying(uuid):
-    content = request.get_json(silent=True)
-    print("querying gives us: ", content)
-    # TOOD: parse json and pass queries to indexing
+    content = request.get_json(silent=True) 
+    # TODO: Parse content to get query
+    # TODO: Call indexing and link analysis APIs and then rank webpages
+    data = {'query_id': uuid, 'urls' : [{'docId': 'google.com', 'rank': 1}]}
+    # TODO: data = ranked webpages
+    return json.dumps(data)
+
+@app.route('/clicks', methods=["POST"])
+def clicks(uuid):
+    content = requests.get_json(silent=True)
+    # TODO: update dictionary of clicks to use in weighting algorithm
     return uuid
-
-@app.route('/pageranks/<uuid>', methods=["POST"])
-def pageranks(uuid):
-    content = request.get_json(silent=True)
-    print("link analysis gives us: ",content)
-    # TOOD: parse json and update weights
-    return uuid
-
-
 
 if __name__ == '__main__':
     app.Debug = True
