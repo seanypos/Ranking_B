@@ -1,34 +1,32 @@
 """
-Hello my Name Is reilly Keating-Wood and 
-for ranking team B i am CFO. The 
-Chief Financial Officer
+main file that will have functions that will perform our ranking 
+algotithm, and create json that will be handed off to other components
+of our search engine sytem
 """
 
-#from flask import Flask
-#from flask import json
+
 import json
 from pprint import pprint
-#from flask import jsonify
-#app = Flask(__name__)
+
+
 
 '''
-def test_connection(self):
-    with app.app_context():
-        return
+Function that retireves our "fake" test json from the link_analysis team
 '''
-
-#data = json.load(open('link_analysis.json'))
-#@app.endpoint("/")
-#def test_json():
-#@app.route('/todo/api/v1.0/data', methods=['GET'])
 def getPageRank():
      data = json.load(open('link_analysis.json'))
      return data
  
+'''
+Function that retrieves our "fake" test json from the indexing team
+'''
 def getIndexing():
     data = json.load(open('indexing.json'))
     return data
 
+'''
+Function that retrievs "fake" json from the querying team
+'''
 def getQuery():
     data = json.load(open('querying.json'))
     return data

@@ -4,7 +4,7 @@ from flask import Flask, request
 import json
 app = Flask(__name__)
 
-import reilly.py as main
+from reilly import getPageRank, getIndexing, create_dict , add_weight, create_query_json
 
 @app.route('/query/<uuid>', methods=["POST"])
 def querying(uuid):
@@ -13,19 +13,19 @@ def querying(uuid):
     # TODO: Call indexing and link analysis APIs and then rank webpages
     #data = {'query_id': uuid, 'urls' : [{'docId': 'google.com', 'rank': 1}]}
     
-    link_analysis = main.getPageRank()
-    indexing = main.getIndexing()
-    weights, urls = main.create_dict(indexing)
-    weights = main.add_weight(indexing, link_analysis, urls, weights)
+    link_analysis = getPageRank()
+    indexing = getIndexing()
+    weights, urls = create_dict(indexing)
+    weights = add_weight(indexing, link_analysis, urls, weights)
     #checkweight(urls,weights)
     sorted_keys = sorted(weights, key=weights.get, reverse = True)
-    test_json = main.create_query_json(sorted_keys, indexing)
+    test_json = create_query_json(sorted_keys, indexing)
     # TODO: data = ranked webpages
     return json.dumps(test_json)
 
 @app.route('/clicks', methods=["POST"])
 def clicks(uuid):
-    content = requests.get_json(silent=True)
+    content = request.get_json(silent=True)
     # TODO: update dictionary of clicks to use in weighting algorithm
     return uuid
 
