@@ -30,7 +30,8 @@ def getIndexing():
     return data
 
 def getQuery():
-    return
+    data = json.load(open('querying.json'))
+    return data
 
 
 
@@ -66,8 +67,10 @@ def add_weight(indexing, link_analysis, urls, weights):
             add = count * token_size * .2
             weights[doc["documentID"]] += add 
     return weights
+
 '''
 Function creates a position dictionary that will be used for query json
+Will help querying identify locations for the snippets they will be outputing
 '''
 def get_position(url, indexing):
     position_dict = {}
@@ -80,6 +83,7 @@ def get_position(url, indexing):
                     locations.append(loc)
                 position_dict[n_gram] = locations
     return position_dict
+
 '''
 Create json to hand off to querying
 '''
@@ -91,11 +95,10 @@ def create_query_json(sorted_keys, indexing):
         inside_dict = {}
         inside_dict["url"] = url
         inside_dict["rank"] = rank
-        position = get_position(url,indexing)
+        position = get_position(url,indexing) #helper position dictionary
         inside_dict["position"] = position
         rank+=1
         url_info.append(inside_dict)
-    
     query_dict["ranking"] = url_info
     json_string = json.dumps(query_dict)
     return json_string
@@ -112,7 +115,7 @@ def create_link_json(urls):
     return json_string
     
 if __name__ == "__main__":
-    
+    querying = getQuery()
     link_analysis = getPageRank()
     indexing = getIndexing()
     weights, urls = create_dict(indexing)
