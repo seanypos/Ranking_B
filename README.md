@@ -14,9 +14,5 @@ Ranking Component of RPI search engine created by team B
       |         |
       /\       /\
      /  '.   .'  \
-    /_/   `"`   \_\
-   \{_ }===[ ]==={_ }
-   (_/\_________/\_)
-       |___|___|
-        |--|--|
-       (__)`(__)
+    /     `"`     \
+  
