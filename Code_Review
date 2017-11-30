@@ -5,3 +5,11 @@ Alvin: Alvin has been testing the unittest framework in python, and using Flask 
 Reilly: Reilly is creating an API to converse with the querying component.
 He created test inputs that we may receive from querying. Use 4 spaces instead of tabs
 Sean: Built JSON testing files for link analysis (sending and recieving). Add missing quotation marks in JSON.
+
+code review 11/29/17
+
+We reviewed Reilly.py (our main script) so that we all understood and are up to date with recent changes. 
+After all of us were on board Alvin continued leading the research on flask for the api, while Sean
+worked on what we would be returning through the api's (the json format) and the weighting system for each data
+recieved from other projects (ie, from indexing, link analysis). Reilly worked on click through rate recieved 
+from quering and some of the jsons related to that as well.
