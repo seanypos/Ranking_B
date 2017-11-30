@@ -8,6 +8,8 @@ Sean: Built JSON testing files for link analysis (sending and recieving). Add mi
 
 code review 11/29/17
 
-Alvin: updating
-Reilly: updating
-Sean: updating
+We reviewed Reilly.py (our main script) so that we all understood and are up to date with recent changes. 
+After all of us were on board Alvin continued leading the research on flask for the api, while Sean
+worked on what we would be returning through the api's (the json format) and the weighting system for each data
+recieved from other projects (ie, from indexing, link analysis), while Reilly click through rate recieved from quering
+and some of the jsons related to that as well.
