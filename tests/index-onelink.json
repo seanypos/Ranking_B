@@ -1,0 +1,40 @@
+{
+    "returnCode": 0,
+    "error": "",
+    "documents": [
+	{
+	    "documentID": "eathealthy.com",
+	    "wordCount": 25,
+	    "pageLastIndexed": "",
+	    "importantTokenRanges":[
+		{
+		    "fieldName": "eat",
+		    "rangeStart": 0,
+		    "rangeEnd": 1
+		}
+	    ]
+	}
+    ],
+    "tokens": [
+	{
+	    "token": "eat",
+	    "ngramSize": 1,
+	    "documentOccurences": [
+		{
+		    "documentID": "eathealthy.com",
+		    "locations": [0]
+		}
+	    ]
+	},
+	{
+	    "token": "healthy",
+	    "ngramSize": 1,
+	    "documentOccurences": [
+		{
+		    "documentID": "eathealthy.com",
+		    "locations": [1]
+		}
+	    ]
+	}
+    ]
+}
