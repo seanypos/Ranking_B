@@ -39,6 +39,7 @@ def create_Indexing_json(querying):
     to_index["tokens"] = querying["transformed"]["transformed_tokens"]
     return to_index
 
+'''Helper function to print weights of dictionary'''
 def checkweight(urls, weights):
     for item in urls:
         print(weights[item])
