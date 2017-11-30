@@ -21,7 +21,7 @@ class TestIndexing(unittest.TestCase):
         fd.close()
 
         # Send POST request
-        response = self.app.post('/sendquery/1', data=json.dumps(data), content_type='application/json')
+        response = self.app.post('/indexing/1', data=json.dumps(data), content_type='application/json')
 
     def test_index_one_link(self):
         fd = open('oneline-index-output.json')
@@ -29,7 +29,7 @@ class TestIndexing(unittest.TestCase):
         fd.close()
 
         # Send POST request
-        response = self.app.post('/sendquery/1', data=json.dumps(data), content_type='application/json')
+        response = self.app.post('/indexing/1', data=json.dumps(data), content_type='application/json')
         
 
 
