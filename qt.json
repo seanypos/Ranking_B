@@ -4,6 +4,6 @@
     "clickthrough": ["befit.com","eatgood.com","wickedhealthy.com"],
 },
  {
-    "search_id": "420",
+    "search_id": 420,
     "clickthrough": ["wickedhealthy.com","eatgood.com"],
 }]
