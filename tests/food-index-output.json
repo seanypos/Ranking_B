@@ -1,0 +1,28 @@
+{"urls" : [
+    {
+	"url": "www.healthyfood.com",
+	"positions": {
+	    "eat" : [1],
+	    "healthy" : [2],
+	    "food" : [3]
+	}
+    },
+    {
+	"url": "www.fastfood.com",
+	"positions": {
+	    "fast" : [1],
+	    "food" : [2],
+	    "is" : [3],
+	    "good" : [4]
+	}
+    },
+    {
+	"url": "www.recipes.com",
+	"positions": {
+	    "how" : [1],
+	    "to" : [2],
+	    "cook" : [3],
+	    "food" : [4]
+	}
+    }
+]}
