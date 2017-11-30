@@ -1,31 +1,65 @@
-[
-    {
-        url: "nutritionfacts.com",
-        PageRank: 1
-       
-    },
-    {
-        url: "webmd/nutritionfacts.com",
-        PageRank: 2
-    },
-    {
-        url: "eatinghealthy.com",
-        PageRank: 3
-    },
-    {
-        url: "weightwatchers.com",
-        PageRank: 4
-    },
-    {
-        url: "cleaneating.com",
-        PageRank: 5
-    },
-    {
-        url: "lifestyle.com",
-        PageRank: 6
-    },
-    {
-        url: "superfoods.com",
-        PageRank: 7
-    }
-]
+{
+    "test":[
+        {
+            "webpage":"nutritionfacts.com",
+            "pageRankValue":1.0,
+            "dateLastUpdated": "2015-08-22",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"webmd/nutritionfacts.com",
+            "pageRankValue":2.0,
+            "dateLastUpdated": "2014-06-11",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"eatinghealthy.com",
+            "pageRankValue":3.0,
+            "dateLastUpdated": "2002-01-09",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"weightwatchers.com",
+            "pageRankValue":4.0,
+            "dateLastUpdated": "2017-08-11",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"cleaneating.com",
+            "pageRankValue":5.0,
+            "dateLastUpdated": "2013-12-03",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"lifestyle.com",
+            "pageRankValue":6.0,
+            "dateLastUpdated": "2003-03-23",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"healthy.com",
+            "pageRankValue":7.0,
+            "dateLastUpdated": "2001-01-26",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"wickedhealthy.com",
+            "pageRankValue":8.0,
+            "dateLastUpdated": "2009-06-12",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"eatgood.com",
+            "pageRankValue":9.0,
+            "dateLastUpdated": "2006-11-11",
+            "frequency": "daily"
+        },
+        {
+            "webpage":"befit.com",
+            "pageRankValue":10.0,
+            "dateLastUpdated": "2007-09-22",
+            "frequency": "daily"
+        }
+    ]
+
+}
