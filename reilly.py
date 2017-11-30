@@ -33,7 +33,11 @@ def getQuery():
     data = json.load(open('querying.json'))
     return data
 
-
+'''Function creates json that will be posted to index '''
+def create_Indexing_json(querying):
+    to_index = {}
+    to_index["tokens"] = querying["transformed"]["transformed_tokens"]
+    return to_index
 
 def checkweight(urls, weights):
     for item in urls:
@@ -46,7 +50,7 @@ def create_dict(indexing):
     #print(indexing["documents"][0]["documentID"])
     all_urls = []
     for x in range(len(indexing["documents"])):
-        weights[indexing["documents"][0]["documentID"]] = 0
+        weights[indexing["documents"][x]["documentID"]] = 0
         all_urls.append(indexing["documents"][x]["documentID"])
     return weights, all_urls
 
@@ -63,8 +67,8 @@ def add_weight(indexing, link_analysis, urls, weights):
     for item in indexing["tokens"]:
         token_size = item["ngramSize"]
         for doc in item["documentOccurences"]:
-            count = len(doc["locations"])
-            add = count * token_size * .2
+            occurence_count = len(doc["locations"])
+            add = occurence_count * token_size * .2
             weights[doc["documentID"]] += add 
     return weights
 
@@ -120,9 +124,10 @@ if __name__ == "__main__":
     indexing = getIndexing()
     weights, urls = create_dict(indexing)
     weights = add_weight(indexing, link_analysis, urls, weights)
-    checkweight(urls,weights)
+    #checkweight(urls,weights)
     sorted_keys = sorted(weights, key=weights.get, reverse = True)
+    print(create_Indexing_json(querying))
     #print(create_link_json(urls))
-    print(create_query_json(sorted_keys, indexing))
+    #print(create_query_json(sorted_keys, indexing))
     
     

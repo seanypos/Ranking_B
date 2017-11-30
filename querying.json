@@ -8,7 +8,7 @@
     "transformed":
     {
         "transformed_search": "eating healthy",
-        "transformed_tokens": ["eating, healthy"],
+        "transformed_tokens": ["eating", "healthy"],
         "transformed_bigrams": ["eating healthy"],
         "transformed_trigrams": [""]
     }
