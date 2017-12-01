@@ -10,43 +10,38 @@ def get_data(filename):
     fd.close()
     return data
 
-class TestCreateDict(unittest.TestCase):
+class TestCreateLinkJson(unittest.TestCase):
     '''
-    Testing creations of weight dictionary
+    Testing creating of JSON to be sent to Link Analysis
     '''
-    
+
     def test_no_links(self):
         '''
-        No links in json
+        No links to be sent to link analysis
         '''
         data = get_data('index-nolinks.json')
         weights, urls = main.create_dict(data)
-        
-        self.assertEqual(len(urls), 0)
-        self.assertEqual(len(weights), 0)
+        la_json = json.loads(main.create_link_json(urls))
+        self.assertEqual(len(la_json["webpages"]), 0)
 
+        
     def test_one_link(self):
         '''
-        One link in json
+        One link to be sent to link analysis
         '''
         data = get_data('index-onelink.json')
         weights, urls = main.create_dict(data)
-
-        self.assertEqual(len(urls), 1)
-        self.assertEqual(len(weights), 1)
-        self.assertEqual(weights['eathealthy.com'], 0)
+        la_json = json.loads(main.create_link_json(urls))
+        self.assertEqual(len(la_json["webpages"]), 1)
 
     def test_average(self):
         '''
-        Average response
+        Typical number of links to be sent to link analysis
         '''
         data = get_data('index-average.json')
         weights, urls = main.create_dict(data)
-
-        self.assertEqual(len(urls), 10)
-        self.assertEqual(len(weights), 10)
-        for url in weights.keys():
-            self.assertEqual(weights[url], 0)
+        la_json = json.loads(main.create_link_json(urls))
+        self.assertEqual(len(la_json["webpages"]), 10)
 
 if __name__ == '__main__':
     unittest.main()
