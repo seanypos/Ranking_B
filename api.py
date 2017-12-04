@@ -2,7 +2,7 @@ from flask import Flask, request
 import json
 app = Flask(__name__)
 
-import reilly.py
+import reilly
 
 @app.route('/ranking', methods=["POST"])
 def ranking(uuid):
