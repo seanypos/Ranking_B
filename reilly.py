@@ -6,12 +6,31 @@ of our search engine sytem
 
 
 import json
+import time
 from pprint import pprint
 
 
 
+#weights = {} # urls mapped to its weights
+clicks =  {} # urls mapped to the number of times clicked 
+
+'''Function add clicks to our global clicks dictionary that contains the 
+   popularity of the webpage on the given query'''
+def addClicks(json_clicks):
+    url = json_clicks["clickthrough"]
+    if url in clicks: #URL has been seen before
+        clicks[url] +=1
+    else: #Add to dictionary
+        clicks[url] = 1
+'''        
+function grabs "fake" clicks (popularity Json) from Querying component
 '''
-Function that retireves our "fake" test json from the link_analysis team
+def getClicks():
+    data = json.load(open('clicks.json'))
+    return data
+
+'''
+Function that grabs our "fake" test json from the link_analysis team
 '''
 def getPageRank():
      data = json.load(open('link_analysis.json'))
@@ -46,7 +65,6 @@ Iterate through indexing Json and create dictionary with all url keys
 '''
 def create_dict(indexing):
     weights = {}
-    #print(indexing["documents"][0]["documentID"])
     all_urls = []
     for x in range(len(indexing["documents"])):
         weights[indexing["documents"][x]["documentID"]] = 0
@@ -58,8 +76,7 @@ Function adds weight to the dictionary of urls for each url
 '''
 def add_weight(indexing, link_analysis, urls, weights):
     ## Add link_analysis weight will update multiplayer when testing
-    print(len(link_analysis["test"]))
-    for item in link_analysis["test"]:
+    for item in link_analysis["webpages"]:
         add = item["pageRankValue"] * .2
         weights[item["webpage"]] = add
     ## Add indexing weight multiplier
@@ -90,8 +107,10 @@ def get_position(url, indexing):
 '''
 Create json to hand off to querying
 '''
-def create_query_json(sorted_keys, indexing):
+def create_query_json(sorted_keys, indexing, querying):
+    ID = querying["search_id"] 
     query_dict = {}
+    query_dict["ID"] = ID
     rank = 1
     url_info = []
     for url in sorted_keys:
@@ -106,7 +125,14 @@ def create_query_json(sorted_keys, indexing):
     json_string = json.dumps(query_dict)
     return json_string
     
-       
+'''Function that takes information from the clicks dictionary and 
+   applies this information to our weights '''
+def clicks_to_weights():
+    for url in clicks:
+        weights[url] += (clicks[url] * 20)
+        
+
+    
 
 '''
 Function creates Json that will be handed off to Link Analysis
@@ -117,16 +143,123 @@ def create_link_json(urls):
     json_string = json.dumps(link_json)
     return json_string
     
+'''Function that creates a list from the top 8 urls in another list '''
+def get_top_eight(urls):
+    if len(urls) < 9:
+        return urls
+    top_eight = []
+    for x in range(8):
+        top_eight.append(urls[x])
+    return top_eight
+
+'''Function sorts the top 8 by most recently updated and adds weight from there'''
+def top_eight_update(top_eight,link_analysis):
+    top_with_date = [] #Contains url with date last
+    for item  in top_eight:
+        for doc in link_analysis['webpages']:
+            if doc['webpage'] == item:
+                top_with_date.append((item,doc['dateLastUpdated']))
+    top_with_date.sort(key=lambda tup: tup[1],reverse=True)  # sorts in place
+    just_url =[]
+    for item in top_with_date:
+        just_url.append(item[0])
+    return just_url
+
+''' Add date updated weight '''
+def add_date_weight(weights,urls):
+    i = 1 #
+    for url in urls:
+        add = 8 - i
+        weights[url] += (add * .2)
+        i+=1
+    return weights
+        
+        
+
 if __name__ == "__main__":
+    ###Ranking Simulation### 
+    print("Ranking Team B Simulation!")
+    
+    ##Recive Information from Querying##
+    print("Receiving JSON from Querying...")
+    time.sleep(2)   # delays for 5 seconds. You can Also Use Float Value.
     querying = getQuery()
-    link_analysis = getPageRank()
+    print(querying)
+    print()
+    print()
+    time.sleep(3)
+    
+    ###Send Information to Indexing##
+    print("Sending Indexing JSON list of tokens from Querying")
+    to_indexing = create_Indexing_json(querying)
+    print(to_indexing)
+    print()
+    print()
+    time.sleep(3)
+    
+    ##Recieve information from indexing ##
+    print("Receiving JSON from Indexing")
     indexing = getIndexing()
+    print(indexing)
+    print()
+    print()
+    time.sleep(3)
+    
     weights, urls = create_dict(indexing)
+    
+    
+    
+    ##Send JSON to link_anylisis##
+    print("Send JSON to Link Analysis")
+    send_link_anlysis = create_link_json(urls)
+    print(send_link_anlysis)
+    print()
+    print()
+    time.sleep(3)
+    
+    ##Receive JSON from Link Analysis##
+    print("Receive JSON from Link Analysis")
+    link_analysis = getPageRank()
+    print(link_analysis)
+    print()
+    print()
+    time.sleep(3)
+    
+    ##Perform Ranking algorithm##
+    print("Peforming Ranking Algorithm...")
+    print()
+    print()
+    time.sleep(3)
+    
     weights = add_weight(indexing, link_analysis, urls, weights)
-    #checkweight(urls,weights)
     sorted_keys = sorted(weights, key=weights.get, reverse = True)
-    print(create_Indexing_json(querying))
-    #print(create_link_json(urls))
-    #print(create_query_json(sorted_keys, indexing))
+    #popularity = getClicks()
+    #weights = add_popularity(popularity)
+    top_eight = get_top_eight(sorted_keys)
+    update_eight = top_eight_update(top_eight,link_analysis)
+    weights = add_date_weight(weights,update_eight)
+    
+    print("Send JSON to Querying")
+    print(create_query_json(sorted_keys, indexing,querying))
+    time.sleep(3)
+    
+    
+    print("Receiving clicks JSON from Querying")
+    clicks_json  = getClicks() 
+    print(clicks_json)
+    print()
+    print()
+    time.sleep(3)
+    
+    print("Updating weights based off clicks")
+    addClicks(clicks_json)
+    clicks_to_weights()
+    print()
+    print()
+    time.sleep(3)
+    
+    print("Result from clicks")
+    sorted_keys = sorted(weights, key=weights.get, reverse = True)
+    print(create_query_json(sorted_keys, indexing,querying))
     
     
