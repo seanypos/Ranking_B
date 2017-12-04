@@ -1,0 +1,15 @@
+{
+    "search_id": 1,
+    "raw":
+    {
+	"raw_search": "food",
+	"raw_tokens": "food"
+    },
+    "transformed":
+    {
+	"transformed_search": "food",
+	"transformed_tokens": ["food"],
+	"transformed_bigrams": [],
+	"transformed_trigrams": []
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "search_id": 1,
+    "raw":
+    {
+	"raw_search": "",
+	"raw_tokens": ""
+    },
+    "transformed":
+    {
+	"transformed_search": "",
+	"transformed_tokens": [],
+	"transformed_bigrams": [],
+	"transformed_trigrams": []
+    }
+}

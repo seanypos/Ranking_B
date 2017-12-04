@@ -34,7 +34,7 @@ def getQuery():
     return data
 
 '''Function creates json that will be posted to index '''
-def create_Indexing_json(querying):
+def create_indexing_json(querying):
     to_index = {}
     to_index["tokens"] = querying["transformed"]["transformed_tokens"]
     return to_index

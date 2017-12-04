@@ -1,0 +1,15 @@
+{
+    "search_id": 1,
+    "raw":
+    {
+	"raw_search": "eating healthy food",
+	"raw_tokens": "eating healthy food"
+    },
+    "transformed":
+    {
+	"transformed_search": "eating healthy food",
+	"transformed_tokens": ["eating", "healthy", "food"],
+	"transformed_bigrams": ["eating healthy", "healthy food"],
+	"transformed_trigrams": ["eating healthy food"]
+    }
+}

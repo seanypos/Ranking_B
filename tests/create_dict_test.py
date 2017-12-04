@@ -4,6 +4,9 @@ import sys
 sys.path.append('..')
 import reilly as main
 
+'''
+Opens JSON file with test inputs
+'''
 def get_data(filename):
     fd = open(filename)
     data = json.load(fd)
