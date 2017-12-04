@@ -6,10 +6,22 @@ import reilly
 
 @app.route('/ranking', methods=["POST"])
 def ranking():
-    content = request.get_json(silent=True) 
+    content = request.get_json(silent=True)
+    s_id = content['search_id']
     # TODO: Parse content to get query
     # TODO: Call indexing and link analysis APIs and then rank webpages
-    data = {'query_id': 1, 'urls' : [{'docId': 'google.com', 'rank': 1}]}
+    data = {'search_id': s_id,
+            'ranking' : [
+                {
+                    'url': 'www.google.com',
+                    'rank': 1,
+                    'positions': {
+                        'token': 'google',
+                        'location': [1]
+                    }
+                }
+            ]
+    }
     # TODO: data = ranked webpages
     return json.dumps(data)
 
