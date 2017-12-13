@@ -29,7 +29,8 @@ def ranking():
 def stats():
     content = requests.get_json(silent=True)
     # TODO: update dictionary of clicks to use in weighting algorithm
-    return 0
+    data = {'status': 0}
+    return json.dumps(data)
 
 if __name__ == '__main__':
     app.Debug = True

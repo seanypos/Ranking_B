@@ -7,6 +7,7 @@ of our search engine sytem
 
 import json
 import time
+import requests
 from pprint import pprint
 
 
@@ -34,6 +35,7 @@ Function that grabs our "fake" test json from the link_analysis team
 '''
 def getPageRank():
      data = json.load(open('link_analysis.json'))
+     # data = requests.post('http://teamk.cs.rpi.edu:8080/pageRank', json=webpages)
      return data
  
 '''
@@ -51,7 +53,7 @@ def getQuery():
     return data
 
 '''Function creates json that will be posted to index '''
-def create_Indexing_json(querying):
+def create_indexing_json(querying):
     to_index = {}
     to_index["tokens"] = querying["transformed"]["transformed_tokens"]
     return to_index

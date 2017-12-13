@@ -2,7 +2,7 @@ import unittest
 from flask import json
 import sys
 sys.path.append('..')
-import reilly as main
+import simulation as main
 
 '''
 Opens JSON file with test inputs
