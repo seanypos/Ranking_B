@@ -36,6 +36,7 @@ Function that grabs our "fake" test json from the link_analysis team
 def getPageRank():
      data = json.load(open('link_analysis.json'))
      # data = requests.post('http://teamk.cs.rpi.edu:8080/pageRank', json=webpages)
+     # data = requests.json()
      return data
  
 '''
