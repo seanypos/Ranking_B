@@ -43,7 +43,7 @@ def getPageRank():
 Function that retrieves our "fake" test json from the indexing team
 '''
 def getIndexing():
-    data = json.load(open('indexing.json'))
+    data = json.load(open('tests/index-average.json'))
     return data
 
 '''
@@ -194,7 +194,7 @@ if __name__ == "__main__":
     
     ###Send Information to Indexing##
     print("Sending Indexing JSON list of tokens from Querying")
-    to_indexing = create_Indexing_json(querying)
+    to_indexing = create_indexing_json(querying)
     print(to_indexing)
     print()
     print()
